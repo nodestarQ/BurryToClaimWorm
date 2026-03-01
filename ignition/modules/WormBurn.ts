@@ -1,18 +1,16 @@
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
 
-export default buildModule("WormBurnModule", (m) => {
+export default buildModule("BurryToClaimWormModule", (m) => {
   const cypherWormsAddress = m.getParameter(
     "cypherWormsAddress",
-    "0x4b76b30Ed4c50C0A1E963ef2C5e065F9aF057F5E"
+    "0x94f827db182ed0ff90e03713d4ac7af3184b8f9c"
   );
   const rewardTokenAddress = m.getParameter("rewardTokenAddress");
-  const nftSupply = m.getParameter("nftSupply");
 
-  const wormBurn = m.contract("WormBurn", [
+  const burryToClaimWorm = m.contract("BurryToClaimWorm", [
     cypherWormsAddress,
     rewardTokenAddress,
-    nftSupply,
   ]);
 
-  return { wormBurn };
+  return { burryToClaimWorm };
 });
